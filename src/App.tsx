@@ -8,7 +8,7 @@ const App: React.FC = () => {
  
   const addTodoHandler = (text: string) => {
     console.log("text", text)
-    setTodes([{ id: Math.random().toString(), text }])
+    setTodes(prevTodo => [...prevTodo, { id: Math.random().toString(), text }])
   }
 
   return (

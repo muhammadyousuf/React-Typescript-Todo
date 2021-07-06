@@ -4,7 +4,8 @@ interface TodoListProps {
     items: {
         id: string,
         text: string
-    }[]
+    }[],
+    onDeleteTodo: (id: string) => void
 
 
 };
@@ -16,7 +17,10 @@ const TodoList: React.FC<TodoListProps> = (props) => {
         {
             props.items.map(item => {
                 return (
-                    <li key={item.id} >{item.text}</li>
+                    <li key={item.id} >
+                        <span>{item.text}</span>
+                        <button onClick={() => props.onDeleteTodo(item.id)} >DELETE</button>
+                    </li>
                 )
             })
         }

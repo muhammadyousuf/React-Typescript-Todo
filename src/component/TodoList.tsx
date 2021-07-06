@@ -4,8 +4,7 @@ interface TodoListProps {
     items: {
         id: string,
         text: string
-    }[],
-    value : ""
+    }[]
 
 
 };
